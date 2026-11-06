@@ -1,12 +1,15 @@
-import 'package:basic_learn/page_dua.dart';
+import 'package:basic_learn/pages/page_dua.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../controller/home_controller.dart';
 
 class PageSatu extends StatelessWidget {
   const PageSatu({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var homeC = Get.find<HomeController>();
     return Scaffold(
       appBar: AppBar(title: Text('PageSatu')),
 
@@ -14,7 +17,7 @@ class PageSatu extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Halo Ini Halaman Satu"),
+            Text("Halo Ini Halaman Satu Counter :${homeC.counter} "),
             SizedBox(height: 5),
             ElevatedButton(
               onPressed: () {
